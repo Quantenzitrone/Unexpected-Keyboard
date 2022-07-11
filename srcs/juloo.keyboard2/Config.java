@@ -248,10 +248,11 @@ final class Config
       case "azerty": return R.xml.azerty;
       case "bgph1": return R.xml.local_bgph1;
       case "bone": return R.xml.bone;
-      case "math_bone": return R.xml.math_bone;
       case "colemak": return R.xml.colemak;
       case "dvorak": return R.xml.dvorak;
       case "neo2": return R.xml.neo2;
+      case "math_bone": return R.xml.math_bone;
+      case "math_qwerty": return R.xml.math_qwerty;
       case "qwerty_es": return R.xml.qwerty_es;
       case "qwerty_hu": return R.xml.qwerty_hu;
       case "qwerty_ko": return R.xml.qwerty_ko;
