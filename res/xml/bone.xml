@@ -1,5 +1,5 @@
 <?xml	version="1.0"	encoding="utf-8"?>
-<keyboard bottom_row="false">
+<keyboard>
 	<row>
 		<key key0="j"				key2="esc"				key4="…"/>
 		<key key0="d"				key2="°"				key4="_"/>
@@ -34,12 +34,5 @@
 		<key key0="q"	key1="&apos;" 			key3=","		key4="3"/>
 		<key key0="k"							key3="."/>
 		<key width="1.5" key0="backspace"	key1="delete"	key3=";"/>
-	</row>
-	<row height="0.95">
-		<key width="1.8" key0="ctrl"						key2="meta" 								key4="switch_numeric"/>
-		<key width="1.2" key0="fn"		key1="alt"			key2="change_method"	key3="switch_emoji" key4="config"/>
-		<key width="4.0" key0="space"	key1="superscript"	key4="0"				key3="subscript"/>
-		<key width="1.2" 				key1="up"			key2="right" 			key3="left" 		key4="down" edgekeys="true"/>
-		<key width="1.8" key0="enter"												key3="action"/>
 	</row>
 </keyboard>
