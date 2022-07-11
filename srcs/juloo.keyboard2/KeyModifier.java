@@ -152,7 +152,7 @@ class KeyModifier
   {
     switch (ev)
     {
-      case SWITCH_NUMERIC: return "switch_greekmath";
+      case SWITCH_NUMERIC: return "switch_math";
       default: return null;
     }
   }
@@ -226,6 +226,7 @@ class KeyModifier
       case 'φ': return "ϕ";
       case 'υ': return "ϒ";
       case 'κ': return "ϰ";
+      case 'ϟ': return "ϙ";
       // alternating math characters
       case '∪': return "⋃";
       case '∩': return "⋂";

@@ -34,7 +34,7 @@ class KeyEventHandler implements Config.IKeyEventHandler
           case CHANGE_METHOD: _recv.switchToNextInputMethod(); break;
           case ACTION: _recv.performAction(); break;
           case SWITCH_PROGRAMMING: _recv.switchProgramming(); break;
-          case SWITCH_GREEKMATH: _recv.switchGreekmath(); break;
+          case SWITCH_MATH: _recv.switchMath(); break;
         }
         break;
       case Keyevent:
@@ -106,7 +106,7 @@ class KeyEventHandler implements Config.IKeyEventHandler
     public void switchMain();
     public void switchNumeric();
     public void switchProgramming();
-    public void switchGreekmath();
+    public void switchMath();
 
     public void sendKeyEvent(int eventAction, int eventCode, int meta);
 

@@ -25,6 +25,7 @@ final class Config
   // From preferences
   public int layout; // Or '-1' for the system defaults
   public int programming_layout; // Or '-1' for none
+  public int math_layout; // Or '-1' for none
   public float swipe_dist_px;
   public boolean vibrateEnabled;
   public long longPressTimeout;
@@ -43,6 +44,7 @@ final class Config
   // Dynamically set
   public boolean shouldOfferSwitchingToNextInputMethod;
   public boolean shouldOfferSwitchingToProgramming;
+  public boolean shouldOfferSwitchingToMath;
   public String actionLabel; // Might be 'null'
   public int actionId; // Meaningful only when 'actionLabel' isn't 'null'
   public boolean swapEnterActionKey; // Swap the "enter" and "action" keys
@@ -61,6 +63,7 @@ final class Config
     // default values
     layout = -1;
     programming_layout = -1;
+    math_layout = -1;
     vibrateEnabled = true;
     longPressTimeout = 600;
     longPressInterval = 65;
@@ -77,6 +80,7 @@ final class Config
     // initialized later
     shouldOfferSwitchingToNextInputMethod = false;
     shouldOfferSwitchingToProgramming = false;
+    shouldOfferSwitchingToMath = false;
     actionLabel = null;
     actionId = 0;
     swapEnterActionKey = false;
@@ -112,6 +116,8 @@ final class Config
     layout = layout_s.equals("system") ? -1 : layoutId_of_string(layout_s);
     String prog_layout_s = prefs.getString("programming_layout", "none");
     programming_layout = prog_layout_s.equals("none") ? -1 : layoutId_of_string(prog_layout_s);
+    String math_layout_s = prefs.getString("math_layout", "none");
+    math_layout = math_layout_s.equals("none") ? -1 : layoutId_of_string(math_layout_s);
     // The swipe distance is defined relatively to the "exact physical pixels
     // per inch of the screen", which isn't affected by the scaling settings.
     // Take the mean of both dimensions as an approximation of the diagonal.
@@ -182,6 +188,8 @@ final class Config
                   KeyValue.getKeyByName("enter") : action_key;
               case SWITCH_PROGRAMMING:
                 return shouldOfferSwitchingToProgramming ? key : null;
+              case SWITCH_MATH:
+                return shouldOfferSwitchingToMath ? key : null;
             }
             break;
           case Keyevent:
@@ -240,6 +248,7 @@ final class Config
       case "azerty": return R.xml.azerty;
       case "bgph1": return R.xml.local_bgph1;
       case "bone": return R.xml.bone;
+      case "math_bone": return R.xml.math_bone;
       case "colemak": return R.xml.colemak;
       case "dvorak": return R.xml.dvorak;
       case "neo2": return R.xml.neo2;

@@ -54,6 +54,16 @@
     <item>Dvorak</item>
     <item>Colemak</item>
   </string-array>
+  <string-array name="pref_math_layout_values">
+    <item>none</item>
+    <item>math_bone</item>
+    <item>math_qwerty</item>
+  </string-array>
+  <string-array name="pref_math_layout_entries">
+    <item>@string/pref_math_layout_none</item>
+    <item>Bone</item>
+    <item>Ϙωερτυ</item>
+  </string-array>
   <string-array name="pref_accents_entries">
     <item>@string/pref_accents_e_all_installed</item>
     <item>@string/pref_accents_e_selected</item>

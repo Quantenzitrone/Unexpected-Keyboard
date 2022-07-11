@@ -143,6 +143,8 @@ public class Keyboard2 extends InputMethodService
     _config.shouldOfferSwitchingToProgramming =
       _config.programming_layout != -1 &&
       _currentTextLayout != _config.programming_layout;
+    _config.shouldOfferSwitchingToMath =
+      _config.math_layout != -1;
   }
 
   private String actionLabel_of_imeAction(int action)
@@ -290,11 +292,6 @@ public class Keyboard2 extends InputMethodService
       _keyboardView.setKeyboard(getLayout(R.xml.numeric));
     }
 
-    public void switchGreekmath()
-    {
-      _keyboardView.setKeyboard(getLayout(R.xml.greekmath));
-    }
-
     public void switchProgramming()
     {
       if (_config.programming_layout == -1)
@@ -305,6 +302,22 @@ public class Keyboard2 extends InputMethodService
           {
             if (key.getKind() == KeyValue.Kind.Event
                 && key.getEvent() == KeyValue.Event.SWITCH_PROGRAMMING)
+              return KeyValue.getKeyByName("switch_text");
+            return key;
+          }
+        });
+      _keyboardView.setKeyboard(layout);
+    }
+
+    public void switchMath()
+    {
+      if (_config.math_layout == -1)
+        return;
+      KeyboardData layout = getLayout(_config.math_layout).mapKeys(new KeyboardData.MapKeyValues() {
+          public KeyValue apply(KeyValue key, boolean localized)
+          {
+            if (key.getKind() == KeyValue.Kind.Event
+                && key.getEvent() == KeyValue.Event.SWITCH_TEXT)
               return KeyValue.getKeyByName("switch_text");
             return key;
           }
